@@ -1,0 +1,11 @@
+# Deployment pipeline that contains a manual approval stage.
+apiVersion: pipecd.dev/v1beta1
+kind: TerraformApp
+spec:
+  input:
+    terraformVersion: 1.0.10
+  pipeline:
+    stages:
+      - name: TERRAFORM_PLAN
+      - name: WAIT_APPROVAL
+      - name: TERRAFORM_APPLY
